@@ -1,6 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, { useState } from 'react'
+import PostCard from './components/PostCard'
 import './App.css'
 
 function App() {
@@ -31,7 +30,14 @@ function App() {
 
   return (
     <>
-      
+      <div className="min-h-screen bg-gray-300 p-10">
+      <h1 className="text-3xl font-bold text-center text-gray-800 mb-6"> Social Feed</h1>
+      <div className="flex flex-col items-center">
+        {initialPosts.map((post, index) => (
+          <PostCard key={index} post={post} />
+        ))}
+      </div>
+    </div>
     </>
   )
 }
